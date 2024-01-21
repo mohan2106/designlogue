@@ -97,7 +97,7 @@ const Navbar = () => {
 
 const CallUsNow = () => {
 
-  const phoneNumber = 8168652025;
+  const phoneNumber = 8168642025;
 
   const handleCall = () => {
       window.location.href = `tel:${phoneNumber}`;

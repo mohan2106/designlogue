@@ -3,7 +3,7 @@ import Container from "./container";
 import heroImg from "../public/img/hero.png";
 
 const Hero = () => {
-  const phoneNumber = 8168652025;
+  const phoneNumber = 8168642025;
 
     const handleCall = () => {
         window.location.href = `tel:${phoneNumber}`;
@@ -77,7 +77,7 @@ const Hero = () => {
   );
 }
 const CallNowButton = () => {
-  const phoneNumber = 8168652025;
+  const phoneNumber = 8168642025;
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;

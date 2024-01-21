@@ -44,7 +44,7 @@ const SingleCourse = props => {
     const { name, description, eligibility, price, duration, features, tags} = course;
     const { originalPrice, discount, newPrice } = price;
 
-    const phoneNumber = 8168652025;
+    const phoneNumber = 8168642025;
 
     const handleCall = () => {
         window.location.href = `tel:${phoneNumber}`;
