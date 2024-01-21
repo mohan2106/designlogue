@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useTheme } from "next-themes";
+
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
@@ -15,6 +17,9 @@ import Courses from '../components/courses';
 import ContactSection from '../components/contactSection';
 
 const Home = () => {
+  const { setTheme } = useTheme();
+  setTheme('light');
+
   return (
     <>
       <Head>
