@@ -2,9 +2,10 @@ import React, { useCallback } from 'react';
 import CallUsNow from './callUsButton';
 
 const WhatsappButton = props => {
+    const phoneNumber = 8168642025
 
     return (
-    <a href="whatsapp://send?abid=8168642025&text=Hello" className='fixed z-40 flex items-center justify-center transition duration-300 bg-primary rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-primary focus:bg-primary ease cursor-pointer'>
+    <a href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=Hello`} className='fixed z-40 flex items-center justify-center transition duration-300 bg-primary rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-primary focus:bg-primary ease cursor-pointer'>
         <svg 
             xmlns="http://www.w3.org/2000/svg"
             className="w-6 h-6 fill-white"
