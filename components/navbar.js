@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 
 const Navbar = () => {
   const navigation = [
-    "Home",
+    "Classroom",
     "Results",
     "Courses",
     "Faqs",
@@ -61,9 +61,15 @@ const Navbar = () => {
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
                   <>
                     {navigation.map((item, index) => (
-                      <Link href={`#${item}`} key={index} scroll={true} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary hover:bg-secondary focus:text-primary focus:bg-secondary dark:focus:bg-gray-800 focus:outline-none">
-                          {item}
-                      </Link>
+                        item === 'Classroom' ? (
+                            <Link href={`https://courses.designlogue.in/`} key={index} scroll={true} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary hover:bg-secondary focus:text-primary focus:bg-secondary dark:focus:bg-gray-800 focus:outline-none">
+                                {item}
+                            </Link>
+                        ) : (
+                            <Link href={`#${item}`} key={index} scroll={true} className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-primary hover:bg-secondary focus:text-primary focus:bg-secondary dark:focus:bg-gray-800 focus:outline-none">
+                                {item}
+                            </Link>
+                        )
                     ))}
                     <CallUsNow/>
                   </>
@@ -77,19 +83,31 @@ const Navbar = () => {
         <div className="hidden text-center lg:flex lg:items-center">
           <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
             {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
-                <Link href={`#${menu}`} scroll={true} className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-primary focus:text-primary focus:bg-secondary focus:outline-none dark:focus:bg-gray-800">
-                    {menu}
-                </Link>
-              </li>
+                menu === 'Classroom' ? (
+                        <li className="mr-3 nav__item" key={index}>
+                            <Link href={`https://courses.designlogue.in/`} scroll={true}
+                                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-primary focus:text-primary focus:bg-secondary focus:outline-none dark:focus:bg-gray-800">
+                                {menu}
+                            </Link>
+                        </li>
+
+            ) : (
+                <li className="mr-3 nav__item" key={index}>
+              <Link href={`#${menu}`} scroll={true}
+                    className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-primary focus:text-primary focus:bg-secondary focus:outline-none dark:focus:bg-gray-800">
+                  {menu}
+              </Link>
+          </li>
+                )
+
             ))}
           </ul>
         </div>
 
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <CallUsNow/>
-          {/* <ThemeChanger /> */}
-        </div>
+          <div className="hidden mr-3 space-x-4 lg:flex nav__item">
+              <CallUsNow/>
+              {/* <ThemeChanger /> */}
+          </div>
       </nav>
     </div>
   );
@@ -97,11 +115,11 @@ const Navbar = () => {
 
 const CallUsNow = () => {
 
-  const phoneNumber = 8168642025;
+    const phoneNumber = 8168642025;
 
-  const handleCall = () => {
-      window.location.href = `tel:${phoneNumber}`;
-  };
+    const handleCall = () => {
+        window.location.href = `tel:${phoneNumber}`;
+    };
 
   return (
   <button onClick={handleCall} className={`flex items-center space-x-2 py-3 mx-auto text-lg font-medium text-center rounded-md px-7 lg:px-6 lg:py-2 bg-primary text-white w-full`}>

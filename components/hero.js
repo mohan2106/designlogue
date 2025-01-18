@@ -6,7 +6,7 @@ const Hero = () => {
   const phoneNumber = 8168642025;
 
     const handleCall = () => {
-        window.location.href = `tel:${phoneNumber}`;
+        window.open('https://courses.designlogue.in/', '_blank');
     };
   return (
     <>
@@ -24,16 +24,16 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
-              <button
-                onClick={handleCall}
-                className="px-8 py-4 text-lg font-medium text-center text-white bg-primary rounded-md ">
-                Register Now
-              </button>
-              <CallNowButton/>
+                <button
+                    onClick={handleCall}
+                    className="px-8 py-4 text-lg font-medium text-center text-white bg-primary rounded-md ">
+                    Classroom
+                </button>
+                <CallNowButton/>
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
+          <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="">
             <Image
               src={heroImg}
